@@ -1,41 +1,56 @@
-Aaspas — Hyperlocal Event Discovery App
+# Aaspas — Hyperlocal Event Discovery App
+
 Aaspas is a Flutter and Firebase mobile application for discovering nearby community events in Nepal including blood drives, workshops, cultural programs, and volunteer opportunities.
+
 ---
-Overview
+
+## Overview
+
 The app is built around one core idea:
+
 > **Events should be found because they are nearby, not because they are popular.**
+
 That principle drives location-first discovery, equity-based visibility, and offline caching for Nepal's network conditions.
+
 ---
-Main Features
-Email/Password authentication with email verification
-Google Sign In
-Location-based event discovery within 1–5 km radius
-Personalized event recommendations using weighted scoring
-Create, edit, and delete events with image upload
-Save events to personal collection
-Mark attendance with push notification reminders
-Offline caching for unstable internet
-Search by title, description, category, or location
-Category filtering (Tech, Health, Culture, Sports, Volunteer, Other)
-Interactive map with event markers using OpenStreetMap
-User profile with profile picture upload
-Admin dashboard for moderation and analytics
-Report inappropriate events
-Rate limiting (5 events per user per 24 hours)
+
+## Main Features
+
+- Email/Password authentication with email verification
+- Google Sign In
+- Location-based event discovery within 1–5 km radius
+- Personalized event recommendations using weighted scoring
+- Create, edit, and delete events with image upload
+- Save events to personal collection
+- Mark attendance with push notification reminders
+- Offline caching for unstable internet
+- Search by title, description, category, or location
+- Category filtering (Tech, Health, Culture, Sports, Volunteer, Other)
+- Interactive map with event markers using OpenStreetMap
+- User profile with profile picture upload
+- Admin dashboard for moderation and analytics
+- Report inappropriate events
+- Rate limiting (5 events per user per 24 hours)
+
 ---
-Tech Stack
-Layer	Technology
-Framework	Flutter / Dart
-Authentication	Firebase Authentication
-Database	Cloud Firestore
-Storage	Firebase Storage
-Notifications	Firebase Cloud Messaging
-Maps	OpenStreetMap (flutter_map)
-Location	Geolocator
-Local Storage	Shared Preferences
-Testing	Flutter Test
----
-Project Structure
+
+## Tech Stack
+
+| Layer           | Technology                 |
+|-----------------|----------------------------|
+| Framework       | Flutter / Dart             |
+| Authentication  | Firebase Authentication    |
+| Database        | Cloud Firestore            |
+| Storage         | Firebase Storage           |
+| Notifications   | Firebase Cloud Messaging   |
+| Maps            | OpenStreetMap (flutter_map)|
+| Location        | Geolocator                 |
+| Local Storage   | Shared Preferences         |
+| Testing         | Flutter Test               |
+------------------------------------------------
+
+## Project Structure
+
 ```
 lib/
 ├── models/
@@ -50,45 +65,68 @@ lib/
 test/
 android/
 ```
+
 ---
-Getting Started
-Prerequisites
-Flutter SDK 3.0 or higher
-Android SDK
-Android device or emulator (API 21+)
+
+## Getting Started
+
+### Prerequisites
+
+- Flutter SDK 3.0 or higher
+- Android SDK
+- Android device or emulator (API 21+)
+
 Run a quick check:
+
 ```bash
 flutter doctor
 ```
+
 ---
-1. Clone the Repository
+
+### 1. Clone the Repository
+
 ```bash
 git clone <your-repo-url>
 cd aaspas
 ```
-2. Install Flutter Dependencies
+
+### 2. Install Flutter Dependencies
+
 ```bash
 flutter pub get
 ```
-3. Set Up Firebase
+
+### 3. Set Up Firebase
+
 Create a Firebase project and enable:
-Authentication
-Cloud Firestore
-Firebase Storage
-Firebase Cloud Messaging
+
+- Authentication
+- Cloud Firestore
+- Firebase Storage
+- Firebase Cloud Messaging
+
 Enable these auth providers:
-Email/Password
-Google Sign In
+
+- Email/Password
+- Google Sign In
+
 Register the Android app with the package name:
+
 ```
 com.example.aaspas
 ```
+
 Place the downloaded `google-services.json` in:
+
 ```
 android/app/
 ```
-4. Set Up Firestore Rules
-Go to Firestore Console → Rules and add:
+
+### 4. Set Up Firestore Rules
+
+Go to **Firestore Console → Rules** and add:
+
 ```
 rules_version = '2';
 service cloud.firestore {
@@ -109,8 +147,11 @@ service cloud.firestore {
   }
 }
 ```
-5. Set Up Storage Rules
-Go to Storage Console → Rules and add:
+
+### 5. Set Up Storage Rules
+
+Go to **Storage Console → Rules** and add:
+
 ```
 rules_version = '2';
 service firebase.storage {
@@ -122,21 +163,30 @@ service firebase.storage {
   }
 }
 ```
-6. Run the App
+
+### 6. Run the App
+
 ```bash
 flutter run
 ```
+
 To target Android specifically:
+
 ```bash
 flutter run -d android
 ```
+
 ---
-Testing
+
+## Testing
+
 ```bash
 flutter test
 ```
 
-Build Commands
+
+## Build Commands
+
 ```bash
 # Debug APK
 flutter build apk
@@ -144,24 +194,36 @@ flutter build apk
 # Release APK
 flutter build apk --release
 ```
+
 ---
-Admin Access
+
+## Admin Access
+
 To test admin features:
-Create a user account in the app.
-Open the Firestore Console.
-In the `users` collection, set the user document field: `email = adminaaspaas@gmail.com`
-The admin panel will then be available in the Profile screen.
+
+1. Create a user account in the app.
+2. Open the Firestore Console.
+3. In the `users` collection, set the user document field: `email = adminaaspaas@gmail.com`
+
+The admin panel will then be available in the **Profile** screen.
+
 ---
-Known Limitations
-Android only (iOS not supported)
-Internet required for first-time load
-No payment or ticketing system
-English language only
-Single image per event
+
+## Known Limitations
+
+- Android only (iOS not supported)
+- Internet required for first-time load
+- No payment or ticketing system
+- English language only
+- Single image per event
+
 ---
-Future Enhancements
-iOS version
-Calendar integration
-Nepali language support
-QR code check-in
+
+## Future Enhancements
+
+- iOS version
+- Calendar integration
+- Nepali language support
+- QR code check-in
+
 ---
